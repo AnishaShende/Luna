@@ -1,0 +1,251 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 67108864 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3613), pid=581592, tid=576968
+#
+# JRE version:  (17.0.12+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.12+7-adhoc..jdk17u, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xmx64m -Xms64m -Dorg.gradle.appname=gradlew org.gradle.wrapper.GradleWrapperMain app:installDebug -PreactNativeDevServerPort=8081
+
+Host: AMD Ryzen 5 7520U with Radeon Graphics         , 8 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.3775)
+Time: Thu Apr 17 12:45:17 2025 India Standard Time elapsed time: 1.125314 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001241d4ae590):  JavaThread "Unknown thread" [_thread_in_vm, id=576968, stack(0x000000174bb00000,0x000000174bc00000)]
+
+Stack: [0x000000174bb00000,0x000000174bc00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67f4f9]
+V  [jvm.dll+0x836eaa]
+V  [jvm.dll+0x83896e]
+V  [jvm.dll+0x838fd3]
+V  [jvm.dll+0x247f6f]
+V  [jvm.dll+0x67c2b9]
+V  [jvm.dll+0x670d7a]
+V  [jvm.dll+0x307b5b]
+V  [jvm.dll+0x30f046]
+V  [jvm.dll+0x35f22e]
+V  [jvm.dll+0x35f46f]
+V  [jvm.dll+0x2deb7c]
+V  [jvm.dll+0x2dfad4]
+V  [jvm.dll+0x80870b]
+V  [jvm.dll+0x36cfa1]
+V  [jvm.dll+0x7e70f5]
+V  [jvm.dll+0x3f0adf]
+V  [jvm.dll+0x3f2631]
+C  [jli.dll+0x528f]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0xb14fc]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffa686a6f18, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001241d4cda90 GCTaskThread "GC Thread#0" [stack: 0x000000174bc00000,0x000000174bd00000] [id=576312]
+  0x000001241d4cf1e0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000174bd00000,0x000000174be00000] [id=570024]
+  0x000001241d4d18e0 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000174be00000,0x000000174bf00000] [id=578728]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa67e5f277]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001241d4a9ed0] Heap_lock - owner thread: 0x000001241d4ae590
+
+Heap address: 0x00000000fc000000, size: 64 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000fc000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa68248829]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.012 Loaded shared library C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff66ed10000 - 0x00007ff66ed1e000 	C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\java.exe
+0x00007ffaeb780000 - 0x00007ffaeb9e0000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffaea3d0000 - 0x00007ffaea497000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffae8da0000 - 0x00007ffae916a000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffae9370000 - 0x00007ffae94bb000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffa84b80000 - 0x00007ffa84b9b000 	C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\VCRUNTIME140.dll
+0x00007ffa89930000 - 0x00007ffa89947000 	C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\jli.dll
+0x00007ffae9f20000 - 0x00007ffaea0ec000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffad4280000 - 0x00007ffad4517000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.3624_none_3e086962e3345f24\COMCTL32.dll
+0x00007ffae9550000 - 0x00007ffae9577000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffae9a60000 - 0x00007ffae9b09000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffaea870000 - 0x00007ffaea89a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffae9170000 - 0x00007ffae92a1000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffae8960000 - 0x00007ffae8a03000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffae9590000 - 0x00007ffae95bf000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffac6b70000 - 0x00007ffac6b7c000 	C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\vcruntime140_1.dll
+0x00007ffa687e0000 - 0x00007ffa6886d000 	C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\msvcp140.dll
+0x00007ffa67b70000 - 0x00007ffa687da000 	C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\server\jvm.dll
+0x00007ffae9e60000 - 0x00007ffae9f12000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffaeb470000 - 0x00007ffaeb516000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffaeb620000 - 0x00007ffaeb736000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffaea0f0000 - 0x00007ffaea164000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffae8320000 - 0x00007ffae837e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffadd840000 - 0x00007ffadd84b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffade710000 - 0x00007ffade746000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffae8200000 - 0x00007ffae8214000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffae7730000 - 0x00007ffae774a000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffac5830000 - 0x00007ffac583a000 	C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\jimage.dll
+0x00007ffadbaf0000 - 0x00007ffadbd31000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffaeb0e0000 - 0x00007ffaeb462000 	C:\WINDOWS\System32\combase.dll
+0x00007ffaea5a0000 - 0x00007ffaea676000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffacf9e0000 - 0x00007ffacfa19000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffae8b80000 - 0x00007ffae8c19000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffa67b40000 - 0x00007ffa67b65000 	C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.3624_none_3e086962e3345f24;C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin\server
+
+VM Arguments:
+jvm_args: -Xmx64m -Xms64m -Dorg.gradle.appname=gradlew 
+java_command: org.gradle.wrapper.GradleWrapperMain app:installDebug -PreactNativeDevServerPort=8081
+java_class_path (initial): D:\app4\AwesomeProject\android\\gradle\wrapper\gradle-wrapper.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 67108864                                  {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 67108864                                  {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 67108864                                  {product} {command line}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 67108864                               {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot
+CLASSPATH=D:\app4\AwesomeProject\android\\gradle\wrapper\gradle-wrapper.jar
+PATH=D:\app4\AwesomeProject\node_modules\.bin;D:\app4\AwesomeProject\node_modules\.bin;D:\app4\node_modules\.bin;D:\node_modules\.bin;C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;D:\app4\AwesomeProject\node_modules\.bin;D:\app4\node_modules\.bin;D:\node_modules\.bin;C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Users\Asus\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Asus\bin;C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot\bin;C:\Program Files\Semeru\jdk-21.0.3.9-openj9\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Users\Asus\AppData\Local\Android\Sdk;C:\Users\Asus\AppData\Local\Android\Sdk\emulator;C:\Users\Asus\AppData\Local\Android\Sdk\platform-tools;C:\Users\Asus\AppData\Local\Programs\Python\Launcher;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2\bin;C:\Users\Asus\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MongoDB\mongosh-2.2.5-win32-x64\bin;C:\Users\Asus\AppData\Roaming\npm;C:\Users\Asus\AppData\Local\GitHubDesktop\bin;C:\Users\Asus\AppData\Local\Android\Sdk;C:\Users\Asus\AppData\Local\Android\Sdk\emulator;C:\Users\Asus\AppData\Local\Android\Sdk\platform-tools;C:\Users\Asus\AppData\Local\Android\Sdk\build-tools;C:\Users\Asus\AppData\Local\Android\Sdk\build-tools\35.0.0\lld-bin;C:\Program Files\OpenLogic\jdk-17.0.12.7-hotspot;C:\Users\Asus\AppData\Local\Android\Sdk\platform-tools;C:\Users\Asus\AppData\Local\Android\Sdk;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+USERNAME=Asus
+SHELL=C:\Program Files\Git\usr\bin\bash.exe
+DISPLAY=needs-to-be-defined
+LANG=en_US.UTF-8
+TERM=xterm-256color
+TMPDIR=C:\Users\Asus\AppData\Local\Temp
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 160 Stepping 0, AuthenticAMD
+TMP=C:\Users\Asus\AppData\Local\Temp
+TEMP=C:\Users\Asus\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.3775)
+OS uptime: 4 days 13:16 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (8 cores per cpu, 2 threads per core) family 23 model 160 stepping 0 microcode 0x8a00006, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv
+Processor Information for processor 0
+  Max Mhz: 2801, Current Mhz: 2801, Mhz Limit: 2801
+Processor Information for processor 1
+  Max Mhz: 2801, Current Mhz: 2246, Mhz Limit: 2801
+Processor Information for processor 2
+  Max Mhz: 2801, Current Mhz: 2801, Mhz Limit: 2801
+Processor Information for processor 3
+  Max Mhz: 2801, Current Mhz: 2801, Mhz Limit: 2801
+Processor Information for processor 4
+  Max Mhz: 2801, Current Mhz: 2801, Mhz Limit: 2801
+Processor Information for processor 5
+  Max Mhz: 2801, Current Mhz: 2801, Mhz Limit: 2801
+Processor Information for processor 6
+  Max Mhz: 2801, Current Mhz: 2246, Mhz Limit: 2801
+Processor Information for processor 7
+  Max Mhz: 2801, Current Mhz: 2801, Mhz Limit: 2801
+
+Memory: 4k page, system-wide physical 15647M (214M free)
+TotalPageFile size 47508M (AvailPageFile size 53M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 59M, peak: 123M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.12+7-adhoc..jdk17u) for windows-amd64 JRE (17.0.12+7-adhoc..jdk17u), built on Jul 19 2024 06:16:42 by "" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
